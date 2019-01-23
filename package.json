@@ -9,8 +9,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mongoose": "^5.4.5",
-    "mongoose-encryption": "^2.0.1",
-    "node-enigma": "^1.2.1"
+    "mongoose-encryption": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {
