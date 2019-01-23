@@ -8,6 +8,7 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "md5": "^2.2.1",
     "mongoose": "^5.4.5",
     "mongoose-encryption": "^2.0.1"
   },
