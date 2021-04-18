@@ -1,15 +1,16 @@
-import { setFlagsFromString } from 'v8'
-import { range } from '../lib/util'
-import test from 'ava'
+'use strict';
+
+const { setFlagsFromString } = require('v8');
+const { range } = require('../lib/util');
 
 // 984 by default.
-setFlagsFromString('--stack_size=500')
+setFlagsFromString('--stack_size=500');
 
-test('should work', (t) => {
-  const list = range(1, 3)
-  t.deepEqual(list, [1, 2, 3])
-})
+test('should work', () => {
+  const list = range(1, 3);
+  expect(list).toEqual([1, 2, 3]);
+});
 
-test('should work for large ranges', (t) => {
-  t.notThrows(() => range(1, 1e6))
-})
+test('should work for large ranges', () => {
+  expect(() => range(1, 1e6)).not.toThrow();
+});
