@@ -1,6 +1,6 @@
 //jshint esversion:6
 require('dotenv').config();
-const express = require("express");
+// const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({
+app.use(express.urlencoded({
   extended: true
 }));
 
@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
-mongoose.set("useCreateIndex", true);
+// mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema ({
   email: String,
