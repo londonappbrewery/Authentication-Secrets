@@ -131,11 +131,20 @@ app.post("/submit", function(req, res){
     }
   });
 });
-
-app.get("/logout", function(req, res){
-  req.logout();
-  res.redirect("/");
+app.get("/logout", function(req, res) {
+    req.logout(function(err) {
+        if (err) {
+            console.error(err);
+            return res.redirect("/");
+        }
+        res.redirect("/");
+    });
 });
+
+// app.get("/logout", function(req, res){
+//   req.logout();
+//   res.redirect("/");
+// });
 
 app.post("/register", function(req, res){
 
