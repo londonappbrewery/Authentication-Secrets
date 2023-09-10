@@ -13,7 +13,7 @@ exports.Boolean = require('./boolean');
 
 exports.DocumentArray = require('./documentarray');
 
-exports.Embedded = require('./embedded');
+exports.Embedded = require('./SingleNestedPath');
 
 exports.Array = require('./array');
 
@@ -34,3 +34,4 @@ exports.Map = require('./map');
 exports.Oid = exports.ObjectId;
 exports.Object = exports.Mixed;
 exports.Bool = exports.Boolean;
+exports.ObjectID = exports.ObjectId;

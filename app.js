@@ -27,7 +27,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
+mongoose.connect("mongodb://0.0.0.0:27017/userDB", {useNewUrlParser: true});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema ({
@@ -35,7 +35,8 @@ const userSchema = new mongoose.Schema ({
   password: String,
   googleId: String,
   secret: String
-});
+}); 
+
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);

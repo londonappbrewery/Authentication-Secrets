@@ -1,6 +1,9 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+<a name="2.3.2"></a>
+## 2.3.2 (2020-12-08)
+
+* fix: handle sync errors in pre hooks if there are multiple hooks
 
 <a name="2.3.0"></a>
 ## 2.3.0 (2018-09-24)

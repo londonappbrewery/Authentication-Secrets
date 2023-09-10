@@ -1,5 +1,7 @@
 var acquit = require('acquit');
 
+require('acquit-ignore')();
+
 var content = require('fs').readFileSync('./test/examples.test.js').toString();
 var blocks = acquit.parse(content);
 
@@ -29,7 +31,7 @@ for (var i = 0; i < blocks.length; ++i) {
       acquit.trimEachLine(it.comments[0]) + '\n\n' :
       '';
     mdOutput += '```javascript\n';
-    mdOutput += '    ' + it.code + '\n';
+    mdOutput += it.code + '\n';
     mdOutput += '```\n\n';
   }
 }
