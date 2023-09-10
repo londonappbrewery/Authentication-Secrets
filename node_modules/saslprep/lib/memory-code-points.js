@@ -4,9 +4,14 @@ const fs = require('fs');
 const path = require('path');
 const bitfield = require('sparse-bitfield');
 
+/* eslint-disable-next-line security/detect-non-literal-fs-filename */
 const memory = fs.readFileSync(path.resolve(__dirname, '../code-points.mem'));
 let offset = 0;
 
+/**
+ * Loads each code points sequence from buffer.
+ * @returns {bitfield}
+ */
 function read() {
   const size = memory.readUInt32BE(offset);
   offset += 4;
@@ -31,4 +36,4 @@ module.exports = {
   prohibited_characters,
   bidirectional_r_al,
   bidirectional_l,
-}
+};

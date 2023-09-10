@@ -40,6 +40,10 @@ describe('execPost', function() {
     assert.equal(hooks._posts.get('cook')[0].bar, 'baz');
   });
 
+  it('throws error if no function', function() {
+    assert.throws(() => hooks.post('test'), /got "undefined"/);
+  });
+ 
   it('multiple posts', function(done) {
     hooks.post('cook', function(eggs, callback) {
       setTimeout(

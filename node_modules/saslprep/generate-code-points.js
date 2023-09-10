@@ -11,16 +11,19 @@ const bidirectional_r_al = bitfield();
 const bidirectional_l = bitfield();
 
 /**
+ * Iterare over code points and
+ * convert it into an buffer.
  * @param {bitfield} bits
- * @param {array} src
+ * @param {Array} src
+ * @returns {Buffer}
  */
 function traverse(bits, src) {
-  for(const code of src.keys()) {
+  for (const code of src.keys()) {
     bits.set(code, true);
   }
 
   const buffer = bits.toBuffer();
-  return Buffer.concat([ createSize(buffer), buffer ]);
+  return Buffer.concat([createSize(buffer), buffer]);
 }
 
 /**
@@ -42,7 +45,7 @@ memory.push(
   traverse(non_ascii_space_characters, codePoints.non_ASCII_space_characters),
   traverse(prohibited_characters, codePoints.prohibited_characters),
   traverse(bidirectional_r_al, codePoints.bidirectional_r_al),
-  traverse(bidirectional_l, codePoints.bidirectional_l),
+  traverse(bidirectional_l, codePoints.bidirectional_l)
 );
 
 process.stdout.write(Buffer.concat(memory));
